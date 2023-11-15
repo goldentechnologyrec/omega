@@ -1,0 +1,15 @@
+13-07-2023 11:16:53 > init_check_process [INFO] : Aucun nom de fichier de configuration passe en paramètre
+13-07-2023 11:16:53 > init_check_process [INFO] : FIC_PARAM=../cfg/check_process.cfg (Valeur par defaut)
+13-07-2023 11:16:53 > initCheck_processus [INFO] : ####################################
+13-07-2023 11:16:53 > initCheck_processus [INFO] : 1. Detail des variables du programme
+13-07-2023 11:16:53 > initCheck_processus [INFO] : ####################################
+13-07-2023 11:16:53 > initCheck_processus [INFO] :
+13-07-2023 11:16:53 > initCheck_processus [INFO] : FILE             = check_process
+13-07-2023 11:16:53 > initCheck_processus [INFO] : LOG_LOCATION     = ../log
+13-07-2023 11:16:53 > initCheck_processus [INFO] : DATE             = 20230713111653
+13-07-2023 11:16:53 > initCheck_processus [INFO] : LOG_FILE         = ../log/check_process_20230713111653.log
+13-07-2023 11:16:53 > initCheck_processus [INFO] : FIC_PARAM        = ../cfg/check_process.cfg
+13-07-2023 11:16:53 > initCheck_processus [INFO] : Fin de initCheck_processus
+13-07-2023 11:16:53 > check_process [INFO] : ######### Demarrage de traitement ...  ###########
+13-07-2023 11:16:53 > check_process [INFO] : Le processus (tomcat) est en cours d execution...
+13-07-2023 11:16:53 > check_process [INFO] : ######### Fin de traitement ###########
