@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# S'assurez-vous que le script est exécutable
-#chmod +x start_services.sh
-
 # Emplacement du fichier docker-compose.yml
 DOCKER_COMPOSE_FILE="/home/ec2-user/omega/docker/docker-compose/backend/docker-compose.yml"
 
