@@ -57,7 +57,7 @@ services:
                 command:
                         - --config.file=/etc/prometheus/prometheus.yml
         ihm-omega:
-               build: /home/ec2-user/omega/ihm-omega/
+               build: ../../../ihm-omega/
                container_name: ${IHM_OMEGA_CONTAINER_NAME}
                ports:
                        - ${IHM_OMEGA_PORT}
