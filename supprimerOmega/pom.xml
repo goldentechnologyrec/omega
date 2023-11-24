@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.developer</groupId>
-	<artifactId>omega</artifactId>
-	<version>supprimerOmega</version>
+	<artifactId>supprimerOmega</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>employee-management</name>
 	<description>Build Restful API With JPA and Postgresql</description>
 	<properties>
