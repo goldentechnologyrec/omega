@@ -10,7 +10,7 @@ if [ ! -f "$DOCKER_COMPOSE_FILE" ]; then
 fi
 
 # Arrêter les services avec docker-compose
-docker-compose -f "$DOCKER_COMPOSE_FILE" down
+docker-compose -f "$DOCKER_COMPOSE_FILE" stop
 
 echo "Les services ont été arretés avec succès."
 
