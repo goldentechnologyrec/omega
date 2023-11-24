@@ -25,7 +25,7 @@ services:
                         - ./node-exporter:/etc/node-exporter/textfile_collector
 
         consulter_omega:
-               build: ../../../consulter_omega/
+               build: ../../../consulterOmega/
                container_name: ${CONSULTER_OMEGA_CONTAINER_NAME}
                ports:
                        - ${CONSULTER_OMEGA_PORT}
@@ -33,7 +33,7 @@ services:
 
 
         modifier_omega:
-               build: ../../../modifier_omega/
+               build: ../../../modifierOmega/
                container_name: ${MODIFIER_OMEGA_CONTAINER_NAME}
                ports:
                        - ${MODIFIER_OMEGA_PORT}
@@ -41,7 +41,7 @@ services:
 
 
         ajouter_omega:
-               build: ../../../ajouter_omega/
+               build: ../../../ajouterOmega/
                container_name: ${AJOUTER_OMEGA_CONTAINER_NAME}
                ports:
                        - ${AJOUTER_OMEGA_PORT}
@@ -49,7 +49,7 @@ services:
 
 
         supprimer_omega:
-               build: ../../../supprimer_omega/
+               build: ../../../supprimerOmega/
                container_name: ${SUPPRIMER_OMEGA_CONTAINER_NAME}
                ports:
                        - ${SUPPRIMER_OMEGA_PORT}
