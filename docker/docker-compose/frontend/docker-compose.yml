@@ -1,0 +1,17 @@
+version: '3'
+services:
+      
+        node_exporter:
+                container_name: ${NODE_CONTAINER_NAME}
+                image: prom/node-exporter:latest
+                ports:
+                        - ${NODE_PORT}
+                command: ["--collector.textfile.directory=/etc/node-exporter/textfile_collector"]
+                volumes:
+                        - ./node-exporter:/etc/node-exporter/textfile_collector
+        ihm-omega:
+               build: ../../../ihm-omega/
+               container_name: ${IHM_OMEGA_CONTAINER_NAME}
+               ports:
+                       - ${IHM_OMEGA_PORT}
+               restart: unless-stopped
