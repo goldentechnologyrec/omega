@@ -1,0 +1,38 @@
+#!/bin/bash
+#Seletion des options
+PS3="Choose an action: "
+options=("docker-compose stop" "docker-compose up -d" "Quit")
+
+# Emplacement du fichier docker-compose.yml
+DOCKER_COMPOSE_FILE="/home/ec2-user/omega/docker/docker-compose/backend/docker-compose.yml"
+
+# Vérifiez si le fichier docker-compose.yml existe
+if [ ! -f "$DOCKER_COMPOSE_FILE" ]; then
+  echo "Le fichier docker-compose.yml n'a pas été trouvé."
+  exit 1
+fi
+
+select choice in "${options[@]}"; do
+    case $choice in
+        "docker-compose down")
+            echo "Executing: docker-compose stop"
+            docker-compose -f "$DOCKER_COMPOSE_FILE" stop
+            echo "Les services ont été arrétés avec succès."
+            break
+            ;;
+        "docker-compose up -d")
+            echo "Executing: docker-compose up -d"
+            docker-compose -f "$DOCKER_COMPOSE_FILE" up -d
+            echo "Les services ont été demarés avec succès."
+            break
+            ;;
+        "Quit")
+            echo "Quitting"
+            break
+            ;;
+        *)
+            echo "Invalid option"
+            ;;
+    esac
+done
+
