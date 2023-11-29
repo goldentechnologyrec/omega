@@ -43,6 +43,19 @@ services:
                         - prometheus:/etc/prometheus/
                 command:
                         - --config.file=/etc/prometheus/prometheus.yml
+        consulter_omega:
+                build: ../../../consulterOmega/
+                container_name: ${CONSULTER_OMEGA_CONTAINER_NAME}
+                ports:
+                        - ${CONSULTER_OMEGA_PORT}
+                restart: unless-stopped
+
+        ihm-omega:
+                build: ../../../ihm-omega/
+                container_name: ${IHM_OMEGA_CONTAINER_NAME}
+                ports:
+                        - ${IHM_OMEGA_PORT}
+                restart: unless-stopped
 
 volumes:
 
