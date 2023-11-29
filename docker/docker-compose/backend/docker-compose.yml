@@ -1,0 +1,40 @@
+version: '3'
+services:
+        postgres:
+                build: postgres/
+                container_name: ${PG_CONTAINER_NAME}
+                environment:
+                        POSTGRES_DB: ${POSTGRES_DB}
+                        POSTGRES_USER: ${POSTGRES_USER}
+                        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                        PGDATA: ${PGDATA}
+                volumes:
+                        - postgres:/var/lib/pgsql
+                ports:
+                        - ${PG_PORT}
+                restart: unless-stopped
+
+
+        node_exporter:
+                container_name: ${NODE_CONTAINER_NAME}
+                image: prom/node-exporter:latest
+                ports:
+                        - ${NODE_PORT}
+                command: ["--collector.textfile.directory=/etc/node-exporter/textfile_collector"]
+                volumes:
+                        - ./node-exporter:/etc/node-exporter/textfile_collector
+
+        consulter_omega:
+               build: ../../../consulterOmega/
+               container_name: ${CONSULTER_OMEGA_CONTAINER_NAME}
+               ports:
+                       - ${CONSULTER_OMEGA_PORT}
+               restart: unless-stopped
+
+volumes:
+        postgres:
+                driver: local
+                driver_opts:
+                        type: 'none'
+                        o: 'bind'
+                        device: /data/volumes/postgres
